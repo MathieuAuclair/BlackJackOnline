@@ -26,6 +26,12 @@ namespace BlackJackOnline
 		public string GetCardFullName(int card){ 
 			return cardPack.getCardFullName(card);
 		}
+
+		public void playTurn(Player currentTurnPlayer){
+			int newCard = DrawNewCardFromCardPack ();
+			currentTurnPlayer.HandOfCard.Add (newCard);
+			Console.WriteLine (" draw a " + GetCardFullName(newCard));
+		}
 	}
 }
 

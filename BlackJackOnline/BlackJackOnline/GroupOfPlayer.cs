@@ -18,6 +18,15 @@ namespace BlackJackOnline
 				listOfPlayer [i].name = "Player" + i;
 			}
 		}
+
+		public bool isNotEveryPlayerDone(){
+			foreach (Player currentPlayer in listOfPlayer) {
+				if (!currentPlayer.isPlayerFolded && !(currentPlayer.getTotalPointFromHandOfCard() >= 21)) {//not clean at all!
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 }
 

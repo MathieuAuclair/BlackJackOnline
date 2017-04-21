@@ -7,46 +7,30 @@ namespace BlackJackOnline
 	{
 		
 		static Croupier blackJackSet = new Croupier ();
-		static GroupOfPlayer activePlayers = new GroupOfPlayer (2);
+		static GroupOfPlayer activePlayers = new GroupOfPlayer (2); //weird name...
 
 		public static void Main (string[] args)
 		{
 			blackJackSet.PlayNewCardOnTable ();
 			Console.WriteLine ("The croupier draw " + blackJackSet.GetCardFullName(blackJackSet.PlayedCardByCroupier[0]) + "\n\n");
 			do{
-			foreach (Player currentTurnPlayer in activePlayers.listOfPlayer) {
+				foreach (Player currentTurnPlayer in activePlayers.listOfPlayer) {
 					Console.Write(currentTurnPlayer.name);
 					if(currentTurnPlayer.isPlayerFolded){
 						Console.WriteLine ("player is folded!\n\n");
 					}
 					else{
-						playTurn (currentTurnPlayer);
+						blackJackSet.playTurn (currentTurnPlayer);
 						currentTurnPlayer.isPlayerFolded = isPlayerFolding();
 					}
 				}
-			}while(isNotEveryPlayerDone());
-			
+			}while(activePlayers.isNotEveryPlayerDone());
 		}
 
 		private static bool isPlayerFolding(){
 			Console.WriteLine ("Fold? (Y/N)");
 			if (Console.ReadLine () == "Y") {
 				return true;
-			}
-			return false;
-		}
-
-		private static void playTurn(Player currentTurnPlayer){
-				int newCard = blackJackSet.DrawNewCardFromCardPack ();
-				currentTurnPlayer.HandOfCard.Add (newCard);
-			Console.WriteLine (" draw a " + blackJackSet.GetCardFullName(newCard));
-		}
-
-		private static bool isNotEveryPlayerDone(){
-			foreach (Player currentPlayer in activePlayers.listOfPlayer) {
-				if (!currentPlayer.isPlayerFolded && !(currentPlayer.getTotalPointFromHandOfCard() >= 21)) {//not clean at all!
-					return true;
-				}
 			}
 			return false;
 		}
