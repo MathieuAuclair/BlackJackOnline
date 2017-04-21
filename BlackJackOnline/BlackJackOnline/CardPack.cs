@@ -15,9 +15,9 @@ namespace BlackJackOnline
 		public void mixCardPack(){
 			int newCard;
 			Random randomNewCard = new Random ();
-			for(int cardPosition = 0; cardPosition < 52; cardPosition++){
+			for(int cardPosition = 0; cardPosition < 48; cardPosition++){
 				do {
-					newCard = randomNewCard.Next (0, 52);
+					newCard = randomNewCard.Next (0, 48);
 				} while(isCardNotAvailible (newCard));
 
 				Card.Add (newCard); //add a card to the cardpack

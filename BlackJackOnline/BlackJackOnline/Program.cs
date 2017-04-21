@@ -5,26 +5,26 @@ namespace BlackJackOnline
 {
 	class MainClass
 	{
-		static List<Player> listOfPlayer = new List<Player> ();
+		
 		static Croupier blackJackSet = new Croupier ();
+		static GroupOfPlayer activePlayers = new GroupOfPlayer (2);
 
 		public static void Main (string[] args)
 		{
-			createPlayer (2); //using a placeHolder value
-
-			blackJackSet.playNewCardOnTable ();
-			Console.WriteLine ("The croupier draw " + blackJackSet.PlayedCard[0]);
-
-			foreach (Player currentTurnPlayer in listOfPlayer) {
-				currentTurnPlayer.isPlayerFolded = isPlayerFolding ();
-				playTurnCurrentPlayer (currentTurnPlayer);
-			}
-		}
-
-		private static void createPlayer(int playerCount){
-			for (int i = 0; i < playerCount; i++) {
-				listOfPlayer.Add (new Player());
-			}
+			blackJackSet.PlayNewCardOnTable ();
+			Console.WriteLine ("The croupier draw " + blackJackSet.PlayedCardByCroupier[0]);
+			do{
+			foreach (Player currentTurnPlayer in activePlayers.listOfPlayer) {
+					if(currentTurnPlayer.isPlayerFolded){
+						Console.WriteLine ("\nplayer is folded!");
+					}
+					else{
+						playTurnForCurrentPlayer (currentTurnPlayer);
+						currentTurnPlayer.isPlayerFolded = isPlayerFolding();
+					}
+				}
+			}while(true);
+			
 		}
 
 		private static bool isPlayerFolding(){
@@ -35,15 +35,10 @@ namespace BlackJackOnline
 			return false;
 		}
 
-		private static void playTurnCurrentPlayer(Player currentTurnPlayer){
-			if (currentTurnPlayer.isPlayerFolded) {
-				Console.WriteLine ("player is folded!");
-			} 
-			else {
-				int newCard = blackJackSet.drawNewCardFromCardPack ();
+		private static void playTurnForCurrentPlayer(Player currentTurnPlayer){
+				int newCard = blackJackSet.DrawNewCardFromCardPack ();
 				currentTurnPlayer.HandOfCard.Add (newCard);
-				Console.WriteLine ("Player draw a " + newCard);
-			}
+			Console.WriteLine ("Player draw a " + blackJackSet.ConvertCardDigitToStringValue(newCard));
 		}
 	}
 }

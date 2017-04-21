@@ -38,6 +38,7 @@
     <Compile Include="CardPack.cs" />
     <Compile Include="Croupier.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="GroupOfPlayer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
