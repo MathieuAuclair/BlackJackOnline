@@ -15,6 +15,7 @@ namespace BlackJackOnline
 		private void createPlayer(int countOfPlayer){
 			for (int i = 0; i < countOfPlayer; i++) {
 				listOfPlayer.Add (new Player());
+				listOfPlayer [i].name = "Player" + i;
 			}
 		}
 	}
