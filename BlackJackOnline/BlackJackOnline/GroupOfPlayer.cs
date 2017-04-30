@@ -19,9 +19,19 @@ namespace BlackJackOnline
 			}
 		}
 
-		public bool isNotEveryPlayerDone(){
+		public bool isAnyPlayerLeftToPlay(){
 			foreach (Player currentPlayer in listOfPlayer) {
-				if (!currentPlayer.isPlayerFolded && !(currentPlayer.getTotalPointFromHandOfCard() >= 21)) {//not clean at all!
+				if (!currentPlayer.isPlayerFolded) {
+					return true;
+				}
+			}
+			return false;
+		}
+		/*need to check for optimisation*/
+		public bool isAnyPlayerBusted(){
+			foreach (Player currentPlayer in listOfPlayer) {
+				if (currentPlayer.totalPointInHand > 21) {
+					Console.WriteLine (currentPlayer.name + " is busted!");
 					return true;
 				}
 			}

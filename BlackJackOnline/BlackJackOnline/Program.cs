@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Collections.Specialized;
+using System.Net.Http;
 
 namespace BlackJackOnline
 {
+
 	class MainClass
 	{
 		
@@ -11,20 +15,21 @@ namespace BlackJackOnline
 
 		public static void Main (string[] args)
 		{
-			blackJackSet.PlayNewCardOnTable ();
-			Console.WriteLine ("The croupier draw " + blackJackSet.GetCardFullName(blackJackSet.PlayedCardByCroupier[0]) + "\n\n");
+			sendTestDataToServer ();
+
 			do{
 				foreach (Player currentTurnPlayer in activePlayers.listOfPlayer) {
 					Console.Write(currentTurnPlayer.name);
 					if(currentTurnPlayer.isPlayerFolded){
-						Console.WriteLine ("player is folded!\n\n");
+						Console.Write (" is folded!\n\n");
 					}
 					else{
 						blackJackSet.playTurn (currentTurnPlayer);
+						Console.WriteLine ("You have a hand of " + currentTurnPlayer.getNewTotalPointFromHandOfCard());
 						currentTurnPlayer.isPlayerFolded = isPlayerFolding();
 					}
 				}
-			}while(activePlayers.isNotEveryPlayerDone());
+			}while(activePlayers.isAnyPlayerLeftToPlay() && !activePlayers.isAnyPlayerBusted());
 		}
 
 		private static bool isPlayerFolding(){
@@ -33,6 +38,17 @@ namespace BlackJackOnline
 				return true;
 			}
 			return false;
+		}
+		private static async void sendTestDataToServer(){
+			const string urlTemplate = "http://localhost:8080/build";
+			var userQuery = "test";
+
+			var client = new HttpClient();
+			client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+			client.Timeout = TimeSpan.FromMilliseconds(600000);
+			var task = client.PostAsync(urlTemplate, urlTemplate);
+			var result = task.Result.Content.ReadAsStringAsync().Result;
+
 		}
 	}
 }

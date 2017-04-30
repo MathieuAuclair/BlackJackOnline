@@ -1,0 +1,26 @@
+{
+  "name": "blackjackonline",
+  "version": "1.0.0",
+  "description": "a multiplayer blackjack game on a server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuAuclair/BlackJackOnline.git"
+  },
+  "keywords": [
+    "game",
+    "server",
+    ".net",
+    "nodejs"
+  ],
+  "author": "MathieuAuclair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathieuAuclair/BlackJackOnline/issues"
+  },
+  "homepage": "https://github.com/MathieuAuclair/BlackJackOnline#readme"
+}
