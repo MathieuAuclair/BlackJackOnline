@@ -1,0 +1,21 @@
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\bin\Debug\LabBlackjack.exe.config
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.csprojResolveAssemblyReference.cache
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.Properties.Resources.resources
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.csproj.GenerateResource.Cache
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.frmJeu.resources
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\bin\Debug\LabBlackjack.exe
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\bin\Debug\LabBlackjack.pdb
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.exe
+C:\Users\Utilisateur\Desktop\LabBlackjack\LabBlackjack\obj\Debug\LabBlackjack.pdb
+E:\Cégep\Prog1\Prog I - Ancien\LabBlackjack pour prog2\LabBlackjack\bin\Debug\LabBlackjack.exe.config
+E:\Cégep\Prog1\Prog I - Ancien\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.exe
+E:\Cégep\Prog1\Prog I - Ancien\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.pdb
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\bin\Debug\LabBlackjack.exe.config
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.exe
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.pdb
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\bin\Debug\LabBlackjack.exe
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\bin\Debug\LabBlackjack.pdb
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.csprojResolveAssemblyReference.cache
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.frmJeu.resources
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.Properties.Resources.resources
+C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.csproj.GenerateResource.Cache
