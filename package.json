@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/MathieuAuclair/BlackJackOnline/issues"
   },
-  "homepage": "https://github.com/MathieuAuclair/BlackJackOnline#readme"
+  "homepage": "https://github.com/MathieuAuclair/BlackJackOnline#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "http": "0.0.0"
+  },
+  "devDependencies": {}
 }
