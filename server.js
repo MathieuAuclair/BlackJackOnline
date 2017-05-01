@@ -1,21 +1,13 @@
 var express = require("express");
-var bodyParser = require("body-parser");
-
 var app = express();
+var server = require("http").createServer(app);
 
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json());
+//node js server setup
 
-app.get("/", function(request, response){ 
-    response.send("Hello!!");
+server.listen(process.env.PORT || 8080);
+console.log("Server is running on localhost:8080\n*\n*\n*");
+
+app.post('/test', function(request, response){
+	console.log("testing!");
+	response.end("server say it's working");
 });
-
-app.post("/build", function(request, response){ 
-
-    response.send("This is the post method");
-});
-
-app.listen(8080, "localhost");
-
-//render msg in server console
-console.log("server is running on port 8080...");

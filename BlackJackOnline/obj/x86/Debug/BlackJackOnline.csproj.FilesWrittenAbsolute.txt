@@ -3,3 +3,8 @@
 /home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/BlackJackOnline/bin/Debug/BlackJackOnline.exe
 /home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/BlackJackOnline/obj/x86/Debug/BlackJackOnline.exe
 /home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/BlackJackOnline/obj/x86/Debug/BlackJackOnline.exe.mdb
+/home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/obj/x86/Debug/BlackJackOnline.exe
+/home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/obj/x86/Debug/BlackJackOnline.exe.mdb
+/home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/bin/Debug/BlackJackOnline.exe.mdb
+/home/mathieu_auclair/Desktop/git/blackJackOnline/BlackJackOnline/bin/Debug/BlackJackOnline.exe
