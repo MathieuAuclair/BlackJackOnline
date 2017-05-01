@@ -17,8 +17,6 @@ namespace BlackJackOnline
 
 		public static void Main (string[] args)
 		{
-			TestPOSTWebRequest("test"); 
-
 			do{
 				foreach (Player currentTurnPlayer in activePlayers.listOfPlayer) {
 					Console.Write(currentTurnPlayer.name);
@@ -33,6 +31,7 @@ namespace BlackJackOnline
 				}
 			}while(activePlayers.isAnyPlayerLeftToPlay() && !activePlayers.isAnyPlayerBusted());
 		}
+
 
 		private static bool isPlayerFolding(){
 			Console.WriteLine ("Fold? (Y/N)");

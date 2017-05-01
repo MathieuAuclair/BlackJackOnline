@@ -19,10 +19,19 @@ namespace BlackJackOnline
 			}
 		}
 
-		public bool isAnyPlayerLeftToPlay(){
+		public bool isAnyPlayerLeftToPlay(){//so ugly... god damn!
 			foreach (Player currentPlayer in listOfPlayer) {
 				if (!currentPlayer.isPlayerFolded) {
 					return true;
+				} 
+				else {
+					Player winner = new Player();
+					foreach(Player inGamePlayer in listOfPlayer){
+						if (inGamePlayer.totalPointInHand < 21 && inGamePlayer.totalPointInHand > winner.totalPointInHand) {
+							winner = inGamePlayer;
+						}
+					}
+					Console.WriteLine ("The winner is " + winner.name);
 				}
 			}
 			return false;
