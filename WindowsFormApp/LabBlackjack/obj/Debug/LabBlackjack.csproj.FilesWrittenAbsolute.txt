@@ -1,0 +1,3 @@
+/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.frmJeu.resources
+/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.Properties.Resources.resources

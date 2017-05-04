@@ -1,11 +1,6 @@
 ﻿<Properties StartupItem="BlackJackOnline/BlackJackOnline.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BlackJackOnline/Program.cs">
-    <Files>
-      <File FileName="BlackJackOnline/Program.cs" Line="60" Column="1" />
-      <File FileName="server.js" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="LabBlackjack/LabBlackjack.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LabBlackjack/frmJeu.cs">
+    <Files>
+      <File FileName="LabBlackjack/frmJeu.cs" Line="33" Column="9" />
+      <File FileName="LabBlackjack/Croupier.cs" Line="4" Column="20" />
+      <File FileName="LabBlackjack/GroupOfPlayer.cs" Line="4" Column="23" />
+      <File FileName="LabBlackjack/Player.cs" Line="15" Column="29" />
+      <File FileName="LabBlackjack/CardPack.cs" Line="4" Column="23" />
+      <File FileName="LabBlackjack/frmJeu.Designer.cs" Line="14" Column="42" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
