@@ -19,3 +19,4 @@ C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabB
 C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.frmJeu.resources
 C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.Properties.Resources.resources
 C:\Users\luciefortin\Desktop\LabBlackjack pour prog2\LabBlackjack\obj\Debug\LabBlackjack.csproj.GenerateResource.Cache
+C:\Users\AucMa1633485\Desktop\Nouveau dossier\WindowsFormApp\LabBlackjack\bin\Debug\LabBlackjack.exe.config

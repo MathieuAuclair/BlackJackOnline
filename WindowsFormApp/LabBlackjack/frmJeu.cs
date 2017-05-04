@@ -37,7 +37,19 @@ namespace LabBlackjack
 
 		}
 
+        private void picFinCarte_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void picDemanderCarte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picDistribuerCarte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

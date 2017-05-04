@@ -63,38 +63,41 @@
             // 
             this.picFinCarte.BackColor = System.Drawing.Color.Transparent;
             this.picFinCarte.Location = new System.Drawing.Point(519, 319);
-            this.picFinCarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFinCarte.Margin = new System.Windows.Forms.Padding(2);
             this.picFinCarte.Name = "picFinCarte";
             this.picFinCarte.Size = new System.Drawing.Size(40, 46);
             this.picFinCarte.TabIndex = 71;
             this.picFinCarte.TabStop = false;
+            this.picFinCarte.Click += new System.EventHandler(this.picFinCarte_Click);
             // 
             // picDemanderCarte
             // 
             this.picDemanderCarte.BackColor = System.Drawing.Color.Transparent;
             this.picDemanderCarte.Location = new System.Drawing.Point(477, 319);
-            this.picDemanderCarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDemanderCarte.Margin = new System.Windows.Forms.Padding(2);
             this.picDemanderCarte.Name = "picDemanderCarte";
             this.picDemanderCarte.Size = new System.Drawing.Size(38, 46);
             this.picDemanderCarte.TabIndex = 70;
             this.picDemanderCarte.TabStop = false;
+            this.picDemanderCarte.Click += new System.EventHandler(this.picDemanderCarte_Click);
             // 
             // picDistribuerCarte
             // 
             this.picDistribuerCarte.BackColor = System.Drawing.Color.Transparent;
             this.picDistribuerCarte.Location = new System.Drawing.Point(434, 319);
-            this.picDistribuerCarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDistribuerCarte.Margin = new System.Windows.Forms.Padding(2);
             this.picDistribuerCarte.Name = "picDistribuerCarte";
             this.picDistribuerCarte.Size = new System.Drawing.Size(38, 46);
             this.picDistribuerCarte.TabIndex = 69;
             this.picDistribuerCarte.TabStop = false;
+            this.picDistribuerCarte.Click += new System.EventHandler(this.picDistribuerCarte_Click);
             // 
             // picJ5
             // 
             this.picJ5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ5.BackgroundImage")));
             this.picJ5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ5.Location = new System.Drawing.Point(304, 255);
-            this.picJ5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picJ5.Margin = new System.Windows.Forms.Padding(2);
             this.picJ5.Name = "picJ5";
             this.picJ5.Size = new System.Drawing.Size(56, 73);
             this.picJ5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +110,7 @@
             this.picJ4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ4.BackgroundImage")));
             this.picJ4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ4.Location = new System.Drawing.Point(274, 255);
-            this.picJ4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picJ4.Margin = new System.Windows.Forms.Padding(2);
             this.picJ4.Name = "picJ4";
             this.picJ4.Size = new System.Drawing.Size(56, 73);
             this.picJ4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +123,7 @@
             this.picJ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ3.Image = ((System.Drawing.Image)(resources.GetObject("picJ3.Image")));
             this.picJ3.Location = new System.Drawing.Point(250, 255);
-            this.picJ3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picJ3.Margin = new System.Windows.Forms.Padding(2);
             this.picJ3.Name = "picJ3";
             this.picJ3.Size = new System.Drawing.Size(56, 73);
             this.picJ3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,7 +136,7 @@
             this.picJ2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ2.BackgroundImage")));
             this.picJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ2.Location = new System.Drawing.Point(226, 255);
-            this.picJ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picJ2.Margin = new System.Windows.Forms.Padding(2);
             this.picJ2.Name = "picJ2";
             this.picJ2.Size = new System.Drawing.Size(56, 73);
             this.picJ2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +148,7 @@
             this.picJ1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ1.BackgroundImage")));
             this.picJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ1.Location = new System.Drawing.Point(200, 255);
-            this.picJ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picJ1.Margin = new System.Windows.Forms.Padding(2);
             this.picJ1.Name = "picJ1";
             this.picJ1.Size = new System.Drawing.Size(56, 73);
             this.picJ1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +160,7 @@
             this.picC5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picC5.BackgroundImage")));
             this.picC5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picC5.Location = new System.Drawing.Point(413, 112);
-            this.picC5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picC5.Margin = new System.Windows.Forms.Padding(2);
             this.picC5.Name = "picC5";
             this.picC5.Size = new System.Drawing.Size(54, 73);
             this.picC5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +173,7 @@
             this.picC4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picC4.BackgroundImage")));
             this.picC4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picC4.Location = new System.Drawing.Point(386, 112);
-            this.picC4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picC4.Margin = new System.Windows.Forms.Padding(2);
             this.picC4.Name = "picC4";
             this.picC4.Size = new System.Drawing.Size(54, 73);
             this.picC4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,7 +186,7 @@
             this.picC3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picC3.BackgroundImage")));
             this.picC3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picC3.Location = new System.Drawing.Point(359, 112);
-            this.picC3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picC3.Margin = new System.Windows.Forms.Padding(2);
             this.picC3.Name = "picC3";
             this.picC3.Size = new System.Drawing.Size(56, 73);
             this.picC3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -196,7 +199,7 @@
             this.picC2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picC2.BackgroundImage")));
             this.picC2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picC2.Location = new System.Drawing.Point(334, 112);
-            this.picC2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picC2.Margin = new System.Windows.Forms.Padding(2);
             this.picC2.Name = "picC2";
             this.picC2.Size = new System.Drawing.Size(54, 73);
             this.picC2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +211,7 @@
             this.picC1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picC1.BackgroundImage")));
             this.picC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picC1.Location = new System.Drawing.Point(313, 112);
-            this.picC1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picC1.Margin = new System.Windows.Forms.Padding(2);
             this.picC1.Name = "picC1";
             this.picC1.Size = new System.Drawing.Size(54, 73);
             this.picC1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -259,9 +262,10 @@
             this.Controls.Add(this.picC3);
             this.Controls.Add(this.picC2);
             this.Controls.Add(this.picC1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmJeu";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "BlackJackOnline";
             ((System.ComponentModel.ISupportInitialize)(this.picFinCarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDemanderCarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDistribuerCarte)).EndInit();
