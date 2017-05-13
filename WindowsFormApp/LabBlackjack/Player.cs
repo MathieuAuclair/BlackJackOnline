@@ -16,7 +16,7 @@ namespace LabBlackjack
 		public int totalPointInHand{ get; private set;}
 		/*need solid cleaning*/
 		public int getNewTotalPointFromHandOfCard(){
-			totalPointInHand = 0; //so f***ing ugly!
+			totalPointInHand = 0; 
 			foreach (int card in HandOfCard) {
 				if ((card % numberOfCardPerTypes) >= 10) { //is card a face
 					totalPointInHand += pointForFaceCard;

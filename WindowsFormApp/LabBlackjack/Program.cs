@@ -16,7 +16,7 @@ namespace LabBlackjack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmJeu());
+			Application.Run(new Menu());
         }
     }
 }

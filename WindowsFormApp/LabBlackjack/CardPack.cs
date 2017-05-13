@@ -12,7 +12,7 @@ namespace LabBlackjack
 
 		public CardPack ()
 		{
-			mixCardPack ();
+ 			mixCardPack ();
 		}
 
 		public void mixCardPack(){
