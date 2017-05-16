@@ -44,6 +44,8 @@
             this.picC1 = new System.Windows.Forms.PictureBox();
             this.lblCptC = new System.Windows.Forms.Label();
             this.lblCptJ = new System.Windows.Forms.Label();
+            this.lblCptPlayed = new System.Windows.Forms.Label();
+            this.lblCptWon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFinCarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDemanderCarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDistribuerCarte)).BeginInit();
@@ -118,7 +120,6 @@
             // 
             // picJ3
             // 
-			this.picJ3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ3.BackgroundImage")));
             this.picJ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ3.Image = ((System.Drawing.Image)(resources.GetObject("picJ3.Image")));
             this.picJ3.Location = new System.Drawing.Point(250, 255);
@@ -221,9 +222,9 @@
             this.lblCptC.Location = new System.Drawing.Point(367, 197);
             this.lblCptC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCptC.Name = "lblCptC";
-            this.lblCptC.Size = new System.Drawing.Size(0, 13);
+            this.lblCptC.Size = new System.Drawing.Size(13, 13);
             this.lblCptC.TabIndex = 72;
-			this.lblCptC.Text = "0";
+            this.lblCptC.Text = "0";
             // 
             // lblCptJ
             // 
@@ -233,9 +234,33 @@
             this.lblCptJ.Location = new System.Drawing.Point(256, 341);
             this.lblCptJ.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCptJ.Name = "lblCptJ";
-            this.lblCptJ.Size = new System.Drawing.Size(0, 13);
+            this.lblCptJ.Size = new System.Drawing.Size(13, 13);
             this.lblCptJ.TabIndex = 73;
-			this.lblCptJ.Text = "0";
+            this.lblCptJ.Text = "0";
+            // 
+            // lblCptPlayed
+            // 
+            this.lblCptPlayed.AutoSize = true;
+            this.lblCptPlayed.BackColor = System.Drawing.Color.Transparent;
+            this.lblCptPlayed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCptPlayed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCptPlayed.Location = new System.Drawing.Point(96, 227);
+            this.lblCptPlayed.Name = "lblCptPlayed";
+            this.lblCptPlayed.Size = new System.Drawing.Size(21, 24);
+            this.lblCptPlayed.TabIndex = 74;
+            this.lblCptPlayed.Text = "0";
+            // 
+            // lblCptWon
+            // 
+            this.lblCptWon.AutoSize = true;
+            this.lblCptWon.BackColor = System.Drawing.Color.Transparent;
+            this.lblCptWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCptWon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCptWon.Location = new System.Drawing.Point(96, 315);
+            this.lblCptWon.Name = "lblCptWon";
+            this.lblCptWon.Size = new System.Drawing.Size(21, 24);
+            this.lblCptWon.TabIndex = 75;
+            this.lblCptWon.Text = "0";
             // 
             // frmJeu
             // 
@@ -244,6 +269,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(654, 467);
+            this.Controls.Add(this.lblCptWon);
+            this.Controls.Add(this.lblCptPlayed);
             this.Controls.Add(this.lblCptJ);
             this.Controls.Add(this.lblCptC);
             this.Controls.Add(this.picFinCarte);
@@ -298,6 +325,8 @@
         private System.Windows.Forms.PictureBox picC1;
         private System.Windows.Forms.Label lblCptC;
         private System.Windows.Forms.Label lblCptJ;
+        private System.Windows.Forms.Label lblCptPlayed;
+        private System.Windows.Forms.Label lblCptWon;
     }
 }
 
