@@ -30,6 +30,10 @@ namespace LabBlackjack
         public frmJeu()
         {
             InitializeComponent();
+			DialogResult newGame = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+			if (newGame == DialogResult.Yes) {
+				loadGame ();
+			}
 		}
 
         private void picFinCarte_Click(object sender, EventArgs e){
@@ -122,7 +126,7 @@ namespace LabBlackjack
 				lblCptC.Text = "0";
 				lblCptJ.Text = "0";
 				resetCardPictureBox ();
-				inGamePlayer = new GroupOfPlayer (2);
+				loadGame ();
 			} 
 			else {
 				saveGame ();
@@ -140,6 +144,21 @@ namespace LabBlackjack
 			xmlSave.RemoveAll();
 			xmlSave.AppendChild (xmlSaveNode);
 			xmlSave.Save ("save.xml");
+		}
+
+		private void loadGame(){
+			XmlDocument xmlSave = new XmlDocument();
+			xmlSave.Load ("save.xml");
+			inGamePlayer.listOfPlayer.Clear ();
+			XmlNode xmlSaveNode = xmlSave.SelectSingleNode("SAVE");
+			XmlNodeList node = xmlSaveNode.SelectNodes("PLAYER");
+			foreach(XmlNode loadedPlayer in node){
+				Player player = new Player ();
+				player.name = loadedPlayer ["NAME"].InnerText;
+				player.gamePlayed = Convert.ToInt32(loadedPlayer ["PLAYED"].InnerText);
+				player.gameWon = Convert.ToInt32(loadedPlayer ["WIN"].InnerText);
+				inGamePlayer.listOfPlayer.Add (player);
+			}
 		}
 
 		private void resetCardPictureBox(){

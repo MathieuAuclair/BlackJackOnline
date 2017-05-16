@@ -1,12 +1,12 @@
 <SAVE>
   <PLAYER>
     <NAME>Player0</NAME>
-    <PLAYED>1</PLAYED>
-    <WIN>0</WIN>
+    <PLAYED>2</PLAYED>
+    <WIN>2</WIN>
   </PLAYER>
   <PLAYER>
-    <NAME>Player1</NAME>
-    <PLAYED>0</PLAYED>
-    <WIN>0</WIN>
+    <NAME>croupier</NAME>
+    <PLAYED>2</PLAYED>
+    <WIN>2</WIN>
   </PLAYER>
 </SAVE>
