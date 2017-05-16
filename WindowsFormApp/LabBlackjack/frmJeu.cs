@@ -24,6 +24,7 @@ namespace LabBlackjack
     {
 		Croupier blackjackSet = new Croupier ();
 		GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
+		int cardImageIndex = 0;
 
         public frmJeu()
         {
@@ -58,8 +59,16 @@ namespace LabBlackjack
 				MessageBox.Show ("can't play while being fold!");
 			} 
 			else if(isPlayerNotBusted()){
+				if (cardImageIndex < 5) {
+					cardImageIndex++;
+				} 
+				else {
+					MessageBox.Show ("max card reached!");
+					findSetWinner ();
+				}
 				int newCard = blackjackSet.DrawNewCardFromCardPack ();
-				picJ1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/" + blackjackSet.GetCardFullName(newCard) + ".gif");
+				PictureBox cardPictureBox = (PictureBox)Controls ["picJ" + cardImageIndex];
+				cardPictureBox.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/" + blackjackSet.GetCardFullName(newCard) + ".gif");
 				inGamePlayer.listOfPlayer [0].HandOfCard.Add (newCard);
 				inGamePlayer.listOfPlayer [0].getNewTotalPointFromHandOfCard ();
 				if(isPlayerNotBusted()) {
@@ -88,11 +97,20 @@ namespace LabBlackjack
 		}
 
 		private void setCroupierHandScore(int scoreToBeat){
+			int cardImageIndexCroupier = 0;
 			inGamePlayer.listOfPlayer[1].name = "croupier";
 			while (inGamePlayer.listOfPlayer[1].totalPointInHand < scoreToBeat) {
-				int newCard = blackjackSet.DrawNewCardFromCardPack ();
-				inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);
-				inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard ();
+				cardImageIndexCroupier++;
+				if (cardImageIndex < 6) {
+					int newCard = blackjackSet.DrawNewCardFromCardPack ();
+					PictureBox cardPictureBox = (PictureBox)Controls ["picC" + cardImageIndexCroupier];
+					cardPictureBox.Image = Image.FromFile (Directory.GetCurrentDirectory () + "/images/" + blackjackSet.GetCardFullName (newCard) + ".gif");
+					inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);
+					inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard ();
+				} 
+				else {
+					break;
+				}
 			}
 		}
 
@@ -101,6 +119,7 @@ namespace LabBlackjack
 			lblCptC.Text = inGamePlayer.listOfPlayer [0].gameWon.ToString ();
 			DialogResult newGame = MessageBox.Show ("Do you want to play a new game?", "new game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (newGame == DialogResult.Yes) {
+				resetCardPictureBox ();
 				inGamePlayer = new GroupOfPlayer (2);
 			} 
 			else {
@@ -119,6 +138,17 @@ namespace LabBlackjack
 			xmlSave.RemoveAll();
 			xmlSave.AppendChild (xmlSaveNode);
 			xmlSave.Save ("save.xml");
+		}
+
+		private void resetCardPictureBox(){
+			cardImageIndex = 0;
+			for (int i = 1; i < 6; i++) {
+				PictureBox card = (PictureBox)Controls ["picJ" + i];
+				card.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/back.gif");
+				card = (PictureBox)Controls ["picC" + i];
+				card.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/back.gif");
+			}
+
 		}
     }
 }

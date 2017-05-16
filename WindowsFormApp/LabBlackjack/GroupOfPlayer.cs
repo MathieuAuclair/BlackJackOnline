@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace LabBlackjack
 {
+	/*
+		* this class is created in a way that you can add as many
+		* player as you want but since it don't fit with the given
+		* UI, it's now pretty useless
+	*/
 	public class GroupOfPlayer
 	{
 		public List<Player> listOfPlayer = new List<Player> ();
