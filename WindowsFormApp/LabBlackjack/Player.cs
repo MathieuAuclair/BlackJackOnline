@@ -39,6 +39,7 @@ namespace LabBlackjack
 			xmlName.InnerText = name;
 			XmlNode xmlPlayed = Player.CreateNode (XmlNodeType.Element, "PLAYED", "");
 			xmlPlayed.InnerText = gamePlayed.ToString();
+			Console.WriteLine (gamePlayed.ToString());
 			XmlNode xmlWin = Player.CreateNode (XmlNodeType.Element, "WIN", "");
 			xmlWin.InnerText = gameWon.ToString();
 			XmlNode xmlPlayer = Player.CreateNode (XmlNodeType.Element, "PLAYER", "");

@@ -12,9 +12,10 @@ using System.Text.RegularExpressions;
 
 /*
 	* TODO
-	* OnlineMode handling (!!!!)
-	* Refactoring (!!!)
-	* Documentation (!!)
+	* OnlineMode handling (!!!!!)
+	* Refactoring (!!!!)
+	* Documentation (!)
+	* Use GroupOfPlayer in a better way
 */
 using System.Xml;
 
@@ -72,7 +73,7 @@ namespace LabBlackjack
 				inGamePlayer.listOfPlayer [0].HandOfCard.Add (newCard);
 				inGamePlayer.listOfPlayer [0].getNewTotalPointFromHandOfCard ();
 				if(isPlayerNotBusted()) {
-					MessageBox.Show ("total point: " + inGamePlayer.listOfPlayer [0].totalPointInHand);
+					lblCptJ.Text = inGamePlayer.listOfPlayer [0].totalPointInHand.ToString();
 				}
 			}
 		}
@@ -112,13 +113,14 @@ namespace LabBlackjack
 					break;
 				}
 			}
+			lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString();
 		}
 
 		private void askForNewSet(){
-			lblCptJ.Text = inGamePlayer.listOfPlayer [0].gamePlayed.ToString ();
-			lblCptC.Text = inGamePlayer.listOfPlayer [0].gameWon.ToString ();
 			DialogResult newGame = MessageBox.Show ("Do you want to play a new game?", "new game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (newGame == DialogResult.Yes) {
+				lblCptC.Text = "0";
+				lblCptJ.Text = "0";
 				resetCardPictureBox ();
 				inGamePlayer = new GroupOfPlayer (2);
 			} 
