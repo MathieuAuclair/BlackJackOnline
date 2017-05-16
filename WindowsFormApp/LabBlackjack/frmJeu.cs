@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 /*
 	* TODO
 	* OnlineMode handling (!!!!!)
-	* Refactoring (!!!!)
+	* Refactoring (!!!!!)
 	* Documentation (!)
 	* Use GroupOfPlayer in a better way
 */
