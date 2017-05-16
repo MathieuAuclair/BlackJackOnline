@@ -28,12 +28,12 @@ namespace LabBlackjack
 
         private void button2_Click(object sender, EventArgs e)
         {
-			Application.Run (new frmJeu (true));
+			Application.Run (new frmJeu ());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-			Application.Run (new frmJeu(false));
+			
 		}
     }
 }

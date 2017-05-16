@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace LabBlackjack
 {
@@ -24,13 +25,13 @@ namespace LabBlackjack
 		}
 
 		public string GetCardFullName(int card){ 
-			return cardPack.getCardFullName(card);
+			return Regex.Replace (cardPack.getCardFullName (card), @"\s+", "");
 		}
 
-		public void playTurn(Player currentTurnPlayer){
+		public string playTurn(Player currentTurnPlayer){
 			int newCard = DrawNewCardFromCardPack ();
 			currentTurnPlayer.HandOfCard.Add (newCard);
-			Console.WriteLine (" draw a " + GetCardFullName(newCard));
+			return cardPack.getCardFullName (newCard);
 		}
 	}
 }

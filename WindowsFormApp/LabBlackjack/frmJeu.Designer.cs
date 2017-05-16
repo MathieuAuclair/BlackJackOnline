@@ -103,7 +103,6 @@
             this.picJ5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picJ5.TabIndex = 67;
             this.picJ5.TabStop = false;
-            this.picJ5.Visible = false;
             // 
             // picJ4
             // 
@@ -116,10 +115,10 @@
             this.picJ4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picJ4.TabIndex = 68;
             this.picJ4.TabStop = false;
-            this.picJ4.Visible = false;
             // 
             // picJ3
             // 
+			this.picJ3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picJ3.BackgroundImage")));
             this.picJ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picJ3.Image = ((System.Drawing.Image)(resources.GetObject("picJ3.Image")));
             this.picJ3.Location = new System.Drawing.Point(250, 255);
@@ -129,7 +128,6 @@
             this.picJ3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picJ3.TabIndex = 66;
             this.picJ3.TabStop = false;
-            this.picJ3.Visible = false;
             // 
             // picJ2
             // 
@@ -166,7 +164,6 @@
             this.picC5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picC5.TabIndex = 63;
             this.picC5.TabStop = false;
-            this.picC5.Visible = false;
             // 
             // picC4
             // 
@@ -179,7 +176,6 @@
             this.picC4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picC4.TabIndex = 62;
             this.picC4.TabStop = false;
-            this.picC4.Visible = false;
             // 
             // picC3
             // 
@@ -192,7 +188,6 @@
             this.picC3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picC3.TabIndex = 61;
             this.picC3.TabStop = false;
-            this.picC3.Visible = false;
             // 
             // picC2
             // 
@@ -228,6 +223,7 @@
             this.lblCptC.Name = "lblCptC";
             this.lblCptC.Size = new System.Drawing.Size(0, 13);
             this.lblCptC.TabIndex = 72;
+			this.lblCptC.Text = "0";
             // 
             // lblCptJ
             // 
@@ -239,6 +235,7 @@
             this.lblCptJ.Name = "lblCptJ";
             this.lblCptJ.Size = new System.Drawing.Size(0, 13);
             this.lblCptJ.TabIndex = 73;
+			this.lblCptJ.Text = "0";
             // 
             // frmJeu
             // 

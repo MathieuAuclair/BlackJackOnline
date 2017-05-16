@@ -19,32 +19,17 @@ namespace LabBlackjack
 			}
 		}
 
-		public bool isAnyPlayerLeftToPlay(){//so ugly... god damn!
-			foreach (Player currentPlayer in listOfPlayer) {
-				if (!currentPlayer.isPlayerFolded) {
-					return true;
+		public string findWinningPlayer(){
+			Player winner = new Player();
+			for(int index = 0; index < listOfPlayer.Count; index++){
+				if (listOfPlayer [index].totalPointInHand > winner.totalPointInHand && listOfPlayer[index].totalPointInHand <= 21) {
+					listOfPlayer [index].gameWon++;
+					winner = listOfPlayer [index];
 				} 
-				else {
-					Player winner = new Player();
-					foreach(Player inGamePlayer in listOfPlayer){
-						if (inGamePlayer.totalPointInHand < 21 && inGamePlayer.totalPointInHand > winner.totalPointInHand) {
-							winner = inGamePlayer;
-						}
-					}
-					Console.WriteLine ("The winner is " + winner.name);
-				}
+				listOfPlayer [index].gamePlayed++;
 			}
-			return false;
-		}
-		/*need to check for optimisation*/
-		public bool isAnyPlayerBusted(){
-			foreach (Player currentPlayer in listOfPlayer) {
-				if (currentPlayer.totalPointInHand > 21) {
-					Console.WriteLine (currentPlayer.name + " is busted!");
-					return true;
-				}
-			}
-			return false;
+
+			return winner.name + " with a score of " + winner.totalPointInHand;
 		}
 	}
 }
