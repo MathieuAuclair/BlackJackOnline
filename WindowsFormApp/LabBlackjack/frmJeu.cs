@@ -30,8 +30,8 @@ namespace LabBlackjack
         public frmJeu()
         {
             InitializeComponent();
-			DialogResult newGame = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-			if (newGame == DialogResult.Yes) {
+			DialogResult loadGameSave = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+			if (loadGameSave == DialogResult.Yes) {
 				loadGame ();
 			}
 		}
@@ -159,6 +159,8 @@ namespace LabBlackjack
 				player.gameWon = Convert.ToInt32(loadedPlayer ["WIN"].InnerText);
 				inGamePlayer.listOfPlayer.Add (player);
 			}
+            lblCptPlayed.Text = inGamePlayer.listOfPlayer[0].gamePlayed.ToString();
+            lblCptWon.Text = inGamePlayer.listOfPlayer[0].gameWon.ToString();
 		}
 
 		private void resetCardPictureBox(){
@@ -171,5 +173,29 @@ namespace LabBlackjack
 			}
 
 		}
+        /* sample of http request
+            public static void TestPOSTWebRequest(string request){
+
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/" + request);
+			httpWebRequest.ContentType = "application/json";
+			httpWebRequest.Method = "POST";
+
+			using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+			{
+				string json = "{\"user\":\"test\"," + "\"password\":\"bla\"}";
+
+				streamWriter.Write(json);
+				streamWriter.Flush();
+				streamWriter.Close();
+			}
+
+			var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			{
+				var result = streamReader.ReadToEnd();
+				Console.WriteLine (result);
+			}
+		}
+         */
     }
 }
