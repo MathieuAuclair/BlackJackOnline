@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 /*
 	* TODO
-	* OnlineMode handling (!!!!!)
+	* OnlineMode handling (!!!!)
 	* Refactoring (!!!!!!!!!!!!!!!!!)
 	* Documentation (!)
 	* Use GroupOfPlayer in a better way
@@ -29,13 +29,14 @@ namespace LabBlackjack
 		GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
 		int cardImageIndex = 0;
 		bool onlineMode;
+		string onlineID = "";
 
 		public frmJeu(bool online)
         {
             InitializeComponent();
 			onlineMode = online;
 			if (online) {
-				checkForParter ();
+				checkForPartner ();
 			} 
 			else {
 				DialogResult loadGameSave = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -45,14 +46,21 @@ namespace LabBlackjack
 			}
 		}
 
+		/*----------BTN----------------------------------------------*/
         private void picFinCarte_Click(object sender, EventArgs e){
 			if (onlineMode) {
-			
+				if (sendCustomPOSTWebRequest ("turn", onlineID) == "false") {
+					MessageBox.Show ("Please wait for your turn");
+				} 
+				else {
+					sendCustomPOSTWebRequest ("play", "");
+				}
 			} 
 			else {
 				if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
 					playTurn ();
-				} else {
+				} 
+				else {
 					inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
 					MessageBox.Show ("you fold!");
 					findSetWinner ();
@@ -60,9 +68,15 @@ namespace LabBlackjack
 			}
 		}
 
+		/*----------BTN----------------------------------------------*/
         private void picDemanderCarte_Click(object sender, EventArgs e){
 			if (onlineMode) {
-
+				if (sendCustomPOSTWebRequest ("turn", onlineID) == "false") {
+					MessageBox.Show ("Please wait for your turn");
+				} 
+				else {
+					
+				}
 			} 
 			else {
 				playTurn ();
@@ -73,16 +87,21 @@ namespace LabBlackjack
 			}
 		}
 
-        private void picDistribuerCarte_Click(object sender, EventArgs e){
+		/*----------BTN----------------------------------------------*/
+        private void picDistribuerCarte_Click(object sender, EventArgs e){/*Isshhhh need a huge refactoring...*/
 			if (onlineMode) {
-
+				MessageBox.Show ("yeah");
+				if (sendCustomPOSTWebRequest ("turn", onlineID) == "false") {
+					MessageBox.Show ("Please wait for your turn");
+				} 
+				else {
+					playTurn ();// play turn as normal and then send last card played
+				}
 			} 
 			else {
 				playTurn ();
 			}
 		}
-
-		/*offline mode*/
 
 		private void playTurn(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
@@ -94,9 +113,15 @@ namespace LabBlackjack
 				} 
 				else {
 					MessageBox.Show ("max card reached!");
-					findSetWinner ();
+					if (!onlineMode) {
+						findSetWinner ();
+					}
 				}
 				int newCard = blackjackSet.DrawNewCardFromCardPack ();
+				if(onlineMode){
+					string score = sendCustomPOSTWebRequest ("play", newCard.ToString());
+					lblCptJ.Text = score;
+				}
 				PictureBox cardPictureBox = (PictureBox)Controls ["picJ" + cardImageIndex];
 				cardPictureBox.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/" + blackjackSet.GetCardFullName(newCard) + ".gif");
 				inGamePlayer.listOfPlayer [0].HandOfCard.Add (newCard);
@@ -201,16 +226,14 @@ namespace LabBlackjack
 
 		/*online mode*/
 
-		string onlineID = "";
-
-		public void checkForParter(){
+		public void checkForPartner(){
 			string gameStatus = sendCustomPOSTWebRequest ("login", onlineID);
 			if (gameStatus == "false") {
 				MessageBox.Show ("sorry the game is full try later!");
 			} else if (gameStatus == "true") {
 				MessageBox.Show ("waiting for a player!");
 				Thread.Sleep (4000);
-				checkForParter ();
+				checkForPartner ();
 			} else if (gameStatus == "error") {
 				MessageBox.Show ("there was an error");
 				this.Close ();
@@ -221,7 +244,7 @@ namespace LabBlackjack
 				MessageBox.Show ("looking for a game!");
 				onlineID = gameStatus;
 				Thread.Sleep(2000);
-				checkForParter ();
+				checkForPartner ();
 			}
 		}
 

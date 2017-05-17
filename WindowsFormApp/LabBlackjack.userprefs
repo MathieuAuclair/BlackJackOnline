@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="LabBlackjack/LabBlackjack.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LabBlackjack/frmJeu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LabBlackjack/frmJeu.Designer.cs">
     <Files>
-      <File FileName="LabBlackjack/frmJeu.cs" Line="36" Column="4" />
+      <File FileName="LabBlackjack/frmJeu.cs" Line="35" Column="32" />
       <File FileName="LabBlackjack/Croupier.cs" Line="1" Column="1" />
       <File FileName="LabBlackjack/GroupOfPlayer.cs" Line="1" Column="1" />
       <File FileName="LabBlackjack/Player.cs" Line="1" Column="1" />

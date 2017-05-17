@@ -28,11 +28,11 @@ var searching = true;
 
 function member(newName){
 this.name = newName;
+this.handOfCard = [];
 this.point = 0;
 }
 
 app.post('/login', function(request, response){
-	console.log(JSON.stringify(onlineUser));
 	if(findIdSession(request.body.data) && onlineUser.length < 2){//still waiting for other player
 		response.send("true");
 	}
@@ -45,13 +45,8 @@ app.post('/login', function(request, response){
 
 	}
 	else if(findIdSession(request.body.data) && onlineUser.length >= 2){ //can't create new session id if game is full
-		if(searching){
-		console.log("start a new game!");
-		response.send("start");
-		}
-		else{
-		response.send("false");
-		}
+	console.log("start a new game!");
+	response.send("start");
 	}
 	else{//something is wrong... ?
 		response.send("error");
@@ -69,7 +64,7 @@ function findIdSession(idSession){ //scan onlineUser with a certain name
 
 app.post('/turn', function(request, response){
 	if(request.body.data === currentTurnPlayer){
-		response.send("true");//should send back other player object!
+		response.send("");//need to send back the opponent card
 	}
 	else{
 		response.send("false");
@@ -77,18 +72,33 @@ app.post('/turn', function(request, response){
 });
 
 app.post('/play', function(request, response){
-	changePlayerTurn(currentTurnPlayer);
-	
+	console.log(request.body.data);
+	var index = changePlayerTurn(currentTurnPlayer);
+	onlineUser[index].handOfCard.push(parseInt(request.body.data));
+	onlineUser[index].score += getplayerScore(parseInt(request.body.data));
+	response.send(onlineUser[index].score.toString);
 });
 
 function changePlayerTurn(idSession){
 	for(i=0;i<onlineUser.length;i++){
 		if(onlineUser[i].name != idSession){
 			currentTurnPlayer = onlineUser[i].name;
+			return i;
 		}
 	}
 }
 
-
+function getplayerScore(card){
+	//this will convert card id into point
+	if(card % 13 == 0){
+	return 11;
+	}
+	else if(card % 13 >= 10){
+	return 10;
+	}
+	else{
+	return ((card % 13)+1);
+	}
+}
 
 
