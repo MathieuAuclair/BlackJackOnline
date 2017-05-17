@@ -28,12 +28,13 @@ namespace LabBlackjack
 
         private void button2_Click(object sender, EventArgs e)
         {
-			
+			frmJeu gameOnline = new frmJeu (true);
+			gameOnline.Show ();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmJeu game = new frmJeu();
+            frmJeu game = new frmJeu (false);
             game.Show();
         }
     }

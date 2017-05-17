@@ -2,11 +2,11 @@
   <PLAYER>
     <NAME>Player0</NAME>
     <PLAYED>1</PLAYED>
-    <WIN>1</WIN>
+    <WIN>0</WIN>
   </PLAYER>
   <PLAYER>
     <NAME>croupier</NAME>
     <PLAYED>1</PLAYED>
-    <WIN>1</WIN>
+    <WIN>0</WIN>
   </PLAYER>
 </SAVE>

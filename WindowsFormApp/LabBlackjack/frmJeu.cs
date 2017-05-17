@@ -13,11 +13,13 @@ using System.Text.RegularExpressions;
 /*
 	* TODO
 	* OnlineMode handling (!!!!!)
-	* Refactoring (!!!!!)
+	* Refactoring (!!!!!!!!!!!!!!!!!)
 	* Documentation (!)
 	* Use GroupOfPlayer in a better way
 */
 using System.Xml;
+using System.Net;
+using System.Threading;
 
 namespace LabBlackjack
 {
@@ -26,38 +28,61 @@ namespace LabBlackjack
 		Croupier blackjackSet = new Croupier ();
 		GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
 		int cardImageIndex = 0;
+		bool onlineMode;
 
-        public frmJeu()
+		public frmJeu(bool online)
         {
             InitializeComponent();
-			DialogResult loadGameSave = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-			if (loadGameSave == DialogResult.Yes) {
-				loadGame ();
+			onlineMode = online;
+			if (online) {
+				checkForParter ();
+			} 
+			else {
+				DialogResult loadGameSave = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+				if (loadGameSave == DialogResult.Yes) {
+					loadGame ();
+				}
 			}
 		}
 
         private void picFinCarte_Click(object sender, EventArgs e){
-			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
-				playTurn ();
+			if (onlineMode) {
+			
 			} 
 			else {
-				inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
-				MessageBox.Show ("you fold!");
-				findSetWinner ();
+				if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
+					playTurn ();
+				} else {
+					inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
+					MessageBox.Show ("you fold!");
+					findSetWinner ();
+				}
 			}
 		}
 
         private void picDemanderCarte_Click(object sender, EventArgs e){
-			playTurn ();
-			if (inGamePlayer.listOfPlayer [0].isPlayerFolded == false) {
-				inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
-				findSetWinner ();
+			if (onlineMode) {
+
+			} 
+			else {
+				playTurn ();
+				if (inGamePlayer.listOfPlayer [0].isPlayerFolded == false) {
+					inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
+					findSetWinner ();
+				}
 			}
 		}
 
         private void picDistribuerCarte_Click(object sender, EventArgs e){
-			playTurn ();
-        }
+			if (onlineMode) {
+
+			} 
+			else {
+				playTurn ();
+			}
+		}
+
+		/*offline mode*/
 
 		private void playTurn(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
@@ -173,29 +198,53 @@ namespace LabBlackjack
 			}
 
 		}
-        /* sample of http request
-            public static void TestPOSTWebRequest(string request){
 
+		/*online mode*/
+
+		string onlineID = "";
+
+		public void checkForParter(){
+			string gameStatus = sendCustomPOSTWebRequest ("login", onlineID);
+			if (gameStatus == "false") {
+				MessageBox.Show ("sorry the game is full try later!");
+			} else if (gameStatus == "true") {
+				MessageBox.Show ("waiting for a player!");
+				Thread.Sleep (4000);
+				checkForParter ();
+			} else if (gameStatus == "error") {
+				MessageBox.Show ("there was an error");
+				this.Close ();
+			} else if (gameStatus == "start") {
+				MessageBox.Show ("the game is starting!");
+			}
+			else {
+				MessageBox.Show ("looking for a game!");
+				onlineID = gameStatus;
+				Thread.Sleep(2000);
+				checkForParter ();
+			}
+		}
+
+		public string sendCustomPOSTWebRequest(string request, string dataToServer){
 			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/" + request);
 			httpWebRequest.ContentType = "application/json";
 			httpWebRequest.Method = "POST";
 
 			using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 			{
-				string json = "{\"user\":\"test\"," + "\"password\":\"bla\"}";
+				//string json = "{\"user\":\"test\"," + "\"password\":\"bla\"}";
+				string json = "{\"data\":\"" + dataToServer + "\"}";
 
 				streamWriter.Write(json);
 				streamWriter.Flush();
 				streamWriter.Close();
 			}
-
+				
 			var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				var result = streamReader.ReadToEnd();
-				Console.WriteLine (result);
+				return streamReader.ReadToEnd();
 			}
 		}
-         */
     }
 }
