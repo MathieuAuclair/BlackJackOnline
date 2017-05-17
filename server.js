@@ -72,11 +72,12 @@ app.post('/turn', function(request, response){
 });
 
 app.post('/play', function(request, response){
-	console.log(request.body.data);
+	console.log("user draw : " + request.body.data);
 	var index = changePlayerTurn(currentTurnPlayer);
 	onlineUser[index].handOfCard.push(parseInt(request.body.data));
-	onlineUser[index].score += getplayerScore(parseInt(request.body.data));
-	response.send(onlineUser[index].score.toString);
+	onlineUser[index].point += getplayerScore(parseInt(request.body.data));
+	console.log("user score is: " + onlineUser[index].point);
+	response.send(onlineUser[index].point.toString());
 });
 
 function changePlayerTurn(idSession){
@@ -101,4 +102,6 @@ function getplayerScore(card){
 	}
 }
 
+function checkForWinner(){
 
+}

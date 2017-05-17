@@ -28,6 +28,7 @@ namespace LabBlackjack
 		Croupier blackjackSet = new Croupier ();
 		GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
 		int cardImageIndex = 0;
+		int cardImageIndexCroupier = 1;
 		bool onlineMode;
 		string onlineID = "";
 
@@ -43,6 +44,9 @@ namespace LabBlackjack
 				if (loadGameSave == DialogResult.Yes) {
 					loadGame ();
 				}
+				playTurnForCroupier ();
+				inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard();
+				lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString ();
 			}
 		}
 
@@ -90,7 +94,6 @@ namespace LabBlackjack
 		/*----------BTN----------------------------------------------*/
         private void picDistribuerCarte_Click(object sender, EventArgs e){/*Isshhhh need a huge refactoring...*/
 			if (onlineMode) {
-				MessageBox.Show ("yeah");
 				if (sendCustomPOSTWebRequest ("turn", onlineID) == "false") {
 					MessageBox.Show ("Please wait for your turn");
 				} 
@@ -152,16 +155,11 @@ namespace LabBlackjack
 		}
 
 		private void setCroupierHandScore(int scoreToBeat){
-			int cardImageIndexCroupier = 0;
 			inGamePlayer.listOfPlayer[1].name = "croupier";
 			while (inGamePlayer.listOfPlayer[1].totalPointInHand < scoreToBeat) {
 				cardImageIndexCroupier++;
 				if (cardImageIndex < 6) {
-					int newCard = blackjackSet.DrawNewCardFromCardPack ();
-					PictureBox cardPictureBox = (PictureBox)Controls ["picC" + cardImageIndexCroupier];
-					cardPictureBox.Image = Image.FromFile (Directory.GetCurrentDirectory () + "/images/" + blackjackSet.GetCardFullName (newCard) + ".gif");
-					inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);
-					inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard ();
+					playTurnForCroupier ();
 				} 
 				else {
 					break;
@@ -170,13 +168,24 @@ namespace LabBlackjack
 			lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString();
 		}
 
+		public void playTurnForCroupier(){
+			int newCard = blackjackSet.DrawNewCardFromCardPack ();
+			PictureBox cardPictureBox = (PictureBox)Controls ["picC" + cardImageIndexCroupier];
+			cardPictureBox.Image = Image.FromFile (Directory.GetCurrentDirectory () + "/images/" + blackjackSet.GetCardFullName (newCard) + ".gif");
+			inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);
+			inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard ();
+		}
+
 		private void askForNewSet(){
 			DialogResult newGame = MessageBox.Show ("Do you want to play a new game?", "new game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (newGame == DialogResult.Yes) {
-				lblCptC.Text = "0";
 				lblCptJ.Text = "0";
 				resetCardPictureBox ();
 				loadGame ();
+				cardImageIndexCroupier = 1;
+				playTurnForCroupier ();
+				inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard();
+				lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString ();
 			} 
 			else {
 				saveGame ();
