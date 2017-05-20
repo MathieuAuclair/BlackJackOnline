@@ -310,23 +310,23 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picFinCarte;
-        private System.Windows.Forms.PictureBox picDemanderCarte;
-        private System.Windows.Forms.PictureBox picDistribuerCarte;
-        private System.Windows.Forms.PictureBox picJ5;
-        private System.Windows.Forms.PictureBox picJ4;
-        private System.Windows.Forms.PictureBox picJ3;
-        private System.Windows.Forms.PictureBox picJ2;
-        private System.Windows.Forms.PictureBox picJ1;
-        private System.Windows.Forms.PictureBox picC5;
-        private System.Windows.Forms.PictureBox picC4;
-        private System.Windows.Forms.PictureBox picC3;
-        private System.Windows.Forms.PictureBox picC2;
-        private System.Windows.Forms.PictureBox picC1;
-        private System.Windows.Forms.Label lblCptC;
-        private System.Windows.Forms.Label lblCptJ;
-        private System.Windows.Forms.Label lblCptPlayed;
-        private System.Windows.Forms.Label lblCptWon;
+        public System.Windows.Forms.PictureBox picFinCarte;
+        public System.Windows.Forms.PictureBox picDemanderCarte;
+        public System.Windows.Forms.PictureBox picDistribuerCarte;
+        public System.Windows.Forms.PictureBox picJ5;
+        public System.Windows.Forms.PictureBox picJ4;
+        public System.Windows.Forms.PictureBox picJ3;
+        public System.Windows.Forms.PictureBox picJ2;
+        public System.Windows.Forms.PictureBox picJ1;
+        public System.Windows.Forms.PictureBox picC5;
+        public System.Windows.Forms.PictureBox picC4;
+        public System.Windows.Forms.PictureBox picC3;
+        public System.Windows.Forms.PictureBox picC2;
+        public System.Windows.Forms.PictureBox picC1;
+        public System.Windows.Forms.Label lblCptC;
+        public System.Windows.Forms.Label lblCptJ;
+        public System.Windows.Forms.Label lblCptPlayed;
+        public System.Windows.Forms.Label lblCptWon;
     }
 }
 

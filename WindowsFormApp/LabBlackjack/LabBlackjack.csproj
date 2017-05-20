@@ -86,6 +86,9 @@
     <Compile Include="GroupOfPlayer.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="CardPack.cs" />
+    <Compile Include="game.cs" />
+    <Compile Include="onlineGame.cs" />
+    <Compile Include="offlineGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
