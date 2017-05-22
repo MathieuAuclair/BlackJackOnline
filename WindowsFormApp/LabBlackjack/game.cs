@@ -46,7 +46,7 @@ namespace LabBlackjack
 		}
 
 		public virtual void picDistribuerCarte_Click(){
-
+			
 		}
 
 		public virtual void picFinCarte_Click(){

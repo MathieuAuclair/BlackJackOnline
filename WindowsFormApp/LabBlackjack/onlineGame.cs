@@ -53,7 +53,7 @@ namespace LabBlackjack
 		}
 
 		private bool isItPlayerTurn (){
-			return (sendCustomPOSTWebRequest ("turn", onlineID) == "true");
+			return !(sendCustomPOSTWebRequest ("turn", onlineID) == "false");
 		}
 
 		public void checkForPartner(){
