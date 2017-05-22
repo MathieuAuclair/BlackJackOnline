@@ -149,7 +149,7 @@ namespace LabBlackjack
 			DialogResult newGame = MessageBox.Show ("Do you want to play a new game?", "new game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (newGame == DialogResult.Yes) {
 				frm.lblCptJ.Text = "0";
-				resetCardPictureBox ();
+				resetCardPictureBox (frm);
 				cardImageIndexCroupier = 1;
 				inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard();
 				frm.lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString ();

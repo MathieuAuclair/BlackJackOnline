@@ -23,22 +23,22 @@ namespace LabBlackjack
 		protected GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
 		protected int cardImageIndex = 0;
 		protected int cardImageIndexCroupier = 1;
-		private frmJeu currentGame;
+		protected frmJeu currentGame;
 
 		public game (frmJeu frm)
 		{
 			currentGame = frm;
 		}
 			
-		protected void resetCardPictureBox(){
+		protected void resetCardPictureBox(frmJeu frm){
 			cardImageIndex = 0;
 			for (int i = 1; i < 6; i++) {
-				PictureBox card = (PictureBox)currentGame.Controls ["picJ" + i];
+				PictureBox card = (PictureBox)frm.Controls ["picJ" + i];
 				card.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/back.gif");
-				card = (PictureBox)currentGame.Controls ["picC" + i];
+				card = (PictureBox)frm.Controls ["picC" + i];
 				card.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/back.gif");
 			}
-
+			frm.lblCptJ.Text = "0";
 		}
 
 		protected virtual void playTurn(){

@@ -19,10 +19,10 @@ namespace LabBlackjack
 
 		public offlineGame (frmJeu online) : base(frm)
 		{
+			frm = online;
 			DialogResult loadGameSave = MessageBox.Show ("Do you want to load save?", "load game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (loadGameSave == DialogResult.Yes) {
 				loadGame ();
-				frm = online;
 			}
 			playTurnForCroupier ();
 			inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard();
@@ -147,7 +147,7 @@ namespace LabBlackjack
 		private void askForNewSet(){
 			DialogResult newGame = MessageBox.Show ("Do you want to play a new game?", "new game", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 			if (newGame == DialogResult.Yes) {
-				resetCardPictureBox ();
+				resetCardPictureBox (frm);
 				loadGame ();
 				cardImageIndexCroupier = 1;
 				playTurnForCroupier ();
