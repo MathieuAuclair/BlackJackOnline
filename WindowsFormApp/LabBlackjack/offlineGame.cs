@@ -29,7 +29,7 @@ namespace LabBlackjack
 			frm.lblCptC.Text = inGamePlayer.listOfPlayer [1].totalPointInHand.ToString ();
 		}
 
-		private void picFinCarte_Click(object sender, EventArgs e){
+		virtual public void picFinCarte_Click(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
 				playTurn ();
 			} 
@@ -40,7 +40,7 @@ namespace LabBlackjack
 			}
 		}
 
-		private void picDemanderCarte_Click(object sender, EventArgs e){
+		virtual public void picDemanderCarte_Click(){
 			playTurn ();
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded == false) {
 				inGamePlayer.listOfPlayer [0].isPlayerFolded = true;
@@ -48,11 +48,11 @@ namespace LabBlackjack
 			}
 		}
 
-		private void picDistribuerCarte_Click(object sender, EventArgs e){/*Isshhhh need a huge refactoring...*/
+		virtual public void picDistribuerCarte_Click(){
 			playTurn ();
 		}
 
-		private void playTurn(){
+		virtual public void playTurn(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
 				MessageBox.Show ("can't play while being fold!");
 			} 
@@ -138,6 +138,7 @@ namespace LabBlackjack
 
 		public void playTurnForCroupier(){
 			int newCard = blackjackSet.DrawNewCardFromCardPack ();
+			MessageBox.Show (cardImageIndexCroupier.ToString());
 			PictureBox cardPictureBox = (PictureBox)frm.Controls ["picC" + cardImageIndexCroupier];
 			cardPictureBox.Image = Image.FromFile (Directory.GetCurrentDirectory () + "/images/" + blackjackSet.GetCardFullName (newCard) + ".gif");
 			inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);

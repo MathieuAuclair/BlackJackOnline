@@ -1,11 +1,4 @@
 /home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
 /home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.frmJeu.resources
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.Properties.Resources.resources
 /home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.Menu.resources
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/bin/Debug/LabBlackjack.exe.config
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/bin/Debug/LabBlackjack.exe.mdb
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/bin/Debug/LabBlackjack.exe
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.exe
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.exe.mdb
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/bin/Debug/LabBlackjack.pdb
-/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.pdb
+/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/obj/Debug/LabBlackjack.Properties.Resources.resources

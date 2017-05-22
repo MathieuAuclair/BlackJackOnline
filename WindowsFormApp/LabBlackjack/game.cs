@@ -40,6 +40,22 @@ namespace LabBlackjack
 			}
 
 		}
+
+		protected virtual void playturn(){
+		
+		}
+
+		public virtual void picDistribuerCarte_Click(){
+
+		}
+
+		public virtual void picFinCarte_Click(){
+		
+		}
+
+		public virtual void picDemanderCarte_Click(){
+			
+		}
 	}
 }
 

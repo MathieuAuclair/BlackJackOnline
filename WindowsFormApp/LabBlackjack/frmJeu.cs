@@ -40,14 +40,14 @@ namespace LabBlackjack
 		}
 
 		private void picDistribuerCarte_Click(object sender, EventArgs e){
-
+			newGame.picDistribuerCarte_Click ();
 		}
 		private void picFinCarte_Click(object sender, EventArgs e){
-
+			newGame.picFinCarte_Click ();
 		}
 
 		private void picDemanderCarte_Click(object sender, EventArgs e){
-
+			newGame.picDemanderCarte_Click ();
 		}
     }
 }

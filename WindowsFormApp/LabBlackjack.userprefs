@@ -1,21 +1,21 @@
 ﻿<Properties StartupItem="LabBlackjack/LabBlackjack.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LabBlackjack/frmJeu.Designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LabBlackjack/onlineGame.cs">
     <Files>
-      <File FileName="LabBlackjack/frmJeu.cs" Line="35" Column="32" />
-      <File FileName="LabBlackjack/Croupier.cs" Line="1" Column="1" />
+      <File FileName="LabBlackjack/frmJeu.cs" Line="50" Column="38" />
+      <File FileName="LabBlackjack/Croupier.cs" Line="21" Column="1" />
       <File FileName="LabBlackjack/GroupOfPlayer.cs" Line="1" Column="1" />
-      <File FileName="LabBlackjack/Player.cs" Line="1" Column="1" />
-      <File FileName="LabBlackjack/CardPack.cs" Line="1" Column="1" />
+      <File FileName="LabBlackjack/Player.cs" Line="19" Column="1" />
+      <File FileName="LabBlackjack/CardPack.cs" Line="15" Column="1" />
       <File FileName="LabBlackjack/Menu.cs" Line="1" Column="1" />
       <File FileName="LabBlackjack/Program.cs" Line="1" Column="1" />
-      <File FileName="LabBlackjack/frmJeu.Designer.cs" Line="1" Column="1" />
+      <File FileName="LabBlackjack/game.cs" Line="44" Column="12" />
+      <File FileName="LabBlackjack/onlineGame.cs" Line="104" Column="5" />
+      <File FileName="LabBlackjack/offlineGame.cs" Line="50" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/mathieu_auclair/Desktop/git/blackJackOnline/WindowsFormApp/LabBlackjack/CardPack.cs" line="15" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
