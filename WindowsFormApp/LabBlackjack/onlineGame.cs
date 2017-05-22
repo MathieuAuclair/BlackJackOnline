@@ -14,6 +14,7 @@ using System.Net;
 
 namespace LabBlackjack
 {
+	/*online game inherit from game*/
 	public class onlineGame : game
 	{
 		public static frmJeu frm;
@@ -58,14 +59,17 @@ namespace LabBlackjack
 
 		public void checkForPartner(){
 			string gameStatus = sendCustomPOSTWebRequest ("login", onlineID);
-
+			/*
+			 	* we could avoid this switch by using a real time connection 
+			 	* whitch is called a socket
+			*/
 			switch (gameStatus) {
 				case "false":
 					MessageBox.Show ("sorry the game is full try later!");
 					break;
 				case "true":
 					MessageBox.Show ("waiting for a player!");
-					Thread.Sleep (3000); // really need a socket connection
+					Thread.Sleep (3000); // would really need a socket connection
 					checkForPartner ();
 					break;
 				case "error":
@@ -83,26 +87,44 @@ namespace LabBlackjack
 			}
 		}
 
+
+		/*
+			* this function is used to send HTTP request to the node server,
+			* the first parameter is the name of the request and
+			* the second parameter is the data you want to send to the server
+		*/
 		public string sendCustomPOSTWebRequest(string request, string dataToServer){
+			//the address of the server
 			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/" + request);
+			//the type of serialization
 			httpWebRequest.ContentType = "application/json";
+			//method type GET/POST
 			httpWebRequest.Method = "POST";
 
 			using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 			{
 				string json = "{\"data\":\"" + dataToServer + "\"}";
-
+				/*
+					* here we create a json object whitch is the default type of
+					* serialized object in javascript, we send it throught a stream
+				*/
 				streamWriter.Write(json);
 				streamWriter.Flush();
 				streamWriter.Close();
 			}
 
+			/*
+				* Now we're waiting for the server response
+				* then we open the response with a new stream
+				* we take the value then flush the stream
+			*/
 			var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
 				return streamReader.ReadToEnd();
 			}
 		}
+
 
 		protected override void playTurn(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {

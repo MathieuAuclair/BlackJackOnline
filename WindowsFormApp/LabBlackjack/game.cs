@@ -15,19 +15,26 @@ using System.Net;
 
 namespace LabBlackjack
 {
+	/*
+	 	* this class is abstract because it's not a valid type to decalre
+	 	* we don't want anyone to declare a new game, the only thing we accept
+	 	* is to store a onlineGame or offLine game in a game variable
+	*/
 	public abstract class game
 	{
-
+		/*
+		 	* protected field are field that are accessible from inherit class
+		 	* it's really useful to avoid repetition
+		*/
 		protected string onlineID = "";
 		protected Croupier blackjackSet = new Croupier ();
 		protected GroupOfPlayer inGamePlayer = new GroupOfPlayer (2);
 		protected int cardImageIndex = 0;
 		protected int cardImageIndexCroupier = 1;
-		protected frmJeu currentGame;
 
 		public game (frmJeu frm)
 		{
-			currentGame = frm;
+			
 		}
 			
 		protected void resetCardPictureBox(frmJeu frm){
@@ -41,9 +48,19 @@ namespace LabBlackjack
 			frm.lblCptJ.Text = "0";
 		}
 
+		/*
+			* this is declared because both children class are using this method
+		*/
+
 		protected virtual void playTurn(){
 		
 		}
+
+		/*
+		 	* this is declared so a variable of the type game have these method accessible
+		 	* or else even if online game has these method public, once onlineGame would have been
+		 	* stored in a game variable, these method would not be availible.
+		*/
 
 		public virtual void picDistribuerCarte_Click(){
 			

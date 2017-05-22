@@ -5,13 +5,13 @@
       <File FileName="LabBlackjack/frmJeu.cs" Line="50" Column="38" />
       <File FileName="LabBlackjack/Croupier.cs" Line="21" Column="1" />
       <File FileName="LabBlackjack/GroupOfPlayer.cs" Line="1" Column="1" />
-      <File FileName="LabBlackjack/Player.cs" Line="19" Column="1" />
-      <File FileName="LabBlackjack/CardPack.cs" Line="15" Column="1" />
+      <File FileName="LabBlackjack/Player.cs" Line="50" Column="1" />
+      <File FileName="LabBlackjack/CardPack.cs" Line="1" Column="1" />
       <File FileName="LabBlackjack/Menu.cs" Line="1" Column="1" />
       <File FileName="LabBlackjack/Program.cs" Line="1" Column="1" />
-      <File FileName="LabBlackjack/game.cs" Line="44" Column="12" />
-      <File FileName="LabBlackjack/onlineGame.cs" Line="104" Column="5" />
-      <File FileName="LabBlackjack/offlineGame.cs" Line="50" Column="1" />
+      <File FileName="LabBlackjack/game.cs" Line="34" Column="3" />
+      <File FileName="LabBlackjack/onlineGame.cs" Line="64" Column="33" />
+      <File FileName="LabBlackjack/offlineGame.cs" Line="26" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
