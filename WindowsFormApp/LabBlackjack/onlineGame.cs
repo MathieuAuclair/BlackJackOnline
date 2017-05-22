@@ -109,7 +109,7 @@ namespace LabBlackjack
 				int newCard = blackjackSet.DrawNewCardFromCardPack ();
 				string score = sendCustomPOSTWebRequest ("play", newCard.ToString());
 				frm.lblCptJ.Text = score;
-				PictureBox cardPictureBox = (PictureBox)Controls ["picJ" + cardImageIndex];
+				PictureBox cardPictureBox = (PictureBox)frm.Controls ["picJ" + cardImageIndex];
 				cardPictureBox.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/" + blackjackSet.GetCardFullName(newCard) + ".gif");
 				inGamePlayer.listOfPlayer [0].HandOfCard.Add (newCard);
 				inGamePlayer.listOfPlayer [0].getNewTotalPointFromHandOfCard ();

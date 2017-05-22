@@ -64,7 +64,7 @@ namespace LabBlackjack
 					MessageBox.Show ("max card reached!");
 				}
 				int newCard = blackjackSet.DrawNewCardFromCardPack ();
-				PictureBox cardPictureBox = (PictureBox)Controls ["picJ" + cardImageIndex];
+				PictureBox cardPictureBox = (PictureBox)frm.Controls ["picJ" + cardImageIndex];
 				cardPictureBox.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/images/" + blackjackSet.GetCardFullName(newCard) + ".gif");
 				inGamePlayer.listOfPlayer [0].HandOfCard.Add (newCard);
 				inGamePlayer.listOfPlayer [0].getNewTotalPointFromHandOfCard ();
@@ -138,7 +138,7 @@ namespace LabBlackjack
 
 		public void playTurnForCroupier(){
 			int newCard = blackjackSet.DrawNewCardFromCardPack ();
-			PictureBox cardPictureBox = (PictureBox)Controls ["picC" + cardImageIndexCroupier];
+			PictureBox cardPictureBox = (PictureBox)frm.Controls ["picC" + cardImageIndexCroupier];
 			cardPictureBox.Image = Image.FromFile (Directory.GetCurrentDirectory () + "/images/" + blackjackSet.GetCardFullName (newCard) + ".gif");
 			inGamePlayer.listOfPlayer [1].HandOfCard.Add (newCard);
 			inGamePlayer.listOfPlayer [1].getNewTotalPointFromHandOfCard ();
