@@ -30,3 +30,13 @@ M:\git\blackJack\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.Menu.resourc
 M:\git\blackJack\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.Properties.Resources.resources
 M:\git\blackJack\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.csproj.GenerateResource.Cache
 M:\git\blackJack\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.pdb
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\bin\Debug\LabBlackjack.exe.config
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.csprojResolveAssemblyReference.cache
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.frmJeu.resources
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.Menu.resources
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.Properties.Resources.resources
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.csproj.GenerateResource.Cache
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\bin\Debug\LabBlackjack.exe
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\bin\Debug\LabBlackjack.pdb
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.exe
+M:\git\blackCrap\WindowsFormApp\LabBlackjack\obj\Debug\LabBlackjack.pdb

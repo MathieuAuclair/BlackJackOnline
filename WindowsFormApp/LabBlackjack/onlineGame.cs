@@ -104,7 +104,7 @@ namespace LabBlackjack
 			}
 		}
 
-		public override void playTurn(){
+		protected override void playTurn(){
 			if (inGamePlayer.listOfPlayer [0].isPlayerFolded) {
 				MessageBox.Show ("can't play while being fold!");
 			} 

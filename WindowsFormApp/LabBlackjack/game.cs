@@ -41,7 +41,7 @@ namespace LabBlackjack
 
 		}
 
-		protected virtual void playturn(){
+		protected virtual void playTurn(){
 		
 		}
 
